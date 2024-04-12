@@ -3,6 +3,7 @@ import java.util.List;
 import java.util.Scanner;
 // Exercici de Pau i Alba
 // DONDE ESTOY?
+// alfo
 // Hola
 public class Main {
     public static void main(String[] args) {
