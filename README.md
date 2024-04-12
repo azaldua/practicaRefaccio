@@ -5,3 +5,5 @@
 - Crea una branca del main per a afegir els teus canvis
 - Deixa la teva branca preparada per a que, en cas de fusionar-la amb la master, no afegeixi el teu fitxer .iml
 - No fusionis en cap cas la teva branca amb la master
+
+  @Author: Marcos Biel
