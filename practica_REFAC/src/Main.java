@@ -1,7 +1,9 @@
 import java.io.File;
 import java.util.List;
 import java.util.Scanner;
-// PROVA
+// Exercici de Pau i Alba
+// DONDE ESTOY?
+// Hola
 public class Main {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
@@ -9,7 +11,7 @@ public class Main {
 
         int opcio;
         do {
-            System.out.println("1. ");
+            System.out.println("1. Numero gran");
             System.out.println("2. ");
             System.out.println("3. ");
             System.out.println("4. ");
@@ -20,14 +22,8 @@ public class Main {
             scan.nextLine();
             switch (opcio) {
                 case 1:
-                    System.out.println("intro: ");
-                    int num1 = scan.nextInt();
-                    System.out.println("intro: ");
-                    int num2 = scan.nextInt();
-                    if (max(num1,num2)) {
-                        System.out.println("aaa");
-                    }
-                    else System.out.println("bbb");
+                    
+                
                     break;
                 case 2:
                     double a=2;
@@ -46,7 +42,26 @@ public class Main {
             }
         } while (opcio != 0);
     }
-    
+
+    public static void numGran() {
+        int num1 = demanarNum();
+        int num2 = demanarNum();
+        
+        if (max(num1,num2)) {
+            System.out.println("El num: " + num1 + " és el numero gran.");
+        } else if(max(num2,num1)) {
+            System.out.println("El num: " + num2 + " és el numero gran.");
+        } else{
+            System.out.println("Els dos num son iguals.")
+        } 
+    }
+
+    public static int demanarNum () {
+        System.out.println("intro: ");
+        int num = scan.nextInt();
+        return num;
+    }
+
     public static boolean max(int a, int b) {
         if(a > b) {
             return true;
