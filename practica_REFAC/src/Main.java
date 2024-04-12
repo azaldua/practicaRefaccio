@@ -46,26 +46,32 @@ public class Main {
             }
         } while (opcio != 0);
     }
+    /**
+     * Refact. El uso de if else es inecesario.
+     * @return Dependiendo de los parámetros de entrada, devuelve true o false.
+     */
     public static boolean max(int a, int b) {
-        if(a > b) {
-            return true;
-        } else if (a == b) {
-            return false;
-        } else {
-            return false;
-        }
+        return a > b;
+
     }
-    public static void calcEquacioSegongrau(double a, double b, double c) {
-        double D = b * b - 4 * a * c;
+
+    /**
+     * REFACT Cambiar el nombre de las variables por nombres más descriptivos.
+     * @param coeficienteA p
+     * @param coeficienteB
+     * @param coeficienteC
+     */
+    public static void calcEquacioSegongrau(double coeficienteA, double coeficienteB, double coeficienteC) {
+        double D = coeficienteB * coeficienteB - 4 * coeficienteA * coeficienteC;
         if (D > 0) {
             double x1, x2;
-            x1 = (-b - Math.sqrt(D)) / (2 * a);
-            x2 = (-b + Math.sqrt(D)) / (2 * a);
+            x1 = (-coeficienteB - Math.sqrt(D)) / (2 * coeficienteA);
+            x2 = (-coeficienteB + Math.sqrt(D)) / (2 * coeficienteA);
             System.out.println("x1 = " + x1 + ", x2 = " + x2);
         }
         else if (D == 0) {
             double x;
-            x = -b / (2 * a);
+            x = -coeficienteB / (2 * coeficienteA);
             System.out.println("x = " + x);
         }
         else {
