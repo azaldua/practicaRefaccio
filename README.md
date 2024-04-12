@@ -7,4 +7,3 @@
 - No fusionis en cap cas la teva branca amb la master
 # Prova pull request
 - Soy el Xavi haciendo una prueba en el READMI :)
-- Eustakio .
