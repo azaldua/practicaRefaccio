@@ -1,7 +1,7 @@
 import java.io.File;
 import java.util.List;
 import java.util.Scanner;
-
+// PROVA
 public class Main {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
@@ -46,6 +46,7 @@ public class Main {
             }
         } while (opcio != 0);
     }
+    
     public static boolean max(int a, int b) {
         if(a > b) {
             return true;
@@ -55,6 +56,7 @@ public class Main {
             return false;
         }
     }
+
     public static void calcEquacioSegongrau(double a, double b, double c) {
         double D = b * b - 4 * a * c;
         if (D > 0) {
@@ -72,6 +74,7 @@ public class Main {
             System.out.println("Equation has no roots");
         }
     }
+
     public static class Human {
         private String name;
         private String age;
