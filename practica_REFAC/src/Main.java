@@ -37,7 +37,7 @@ public class Main {
                     break;
                 case 3:
                     List<OrderLineItem> lineItems = null;
-                    //REFACT: El objeto asd no se utiliza.
+                    //REFACT: El objeto asd no se utiliza. Por lo que se puede eliminar/comentar.
 //                    Order asd = new Order(lineItems, 5.5);
                     break;
                 case 0:
