@@ -37,7 +37,8 @@ public class Main {
                     break;
                 case 3:
                     List<OrderLineItem> lineItems = null;
-                    Order asd = new Order(lineItems, 5.5);
+                    //REFACT: El objeto asd no se utiliza.
+//                    Order asd = new Order(lineItems, 5.5);
                     break;
                 case 0:
                     break;
@@ -78,74 +79,6 @@ public class Main {
             System.out.println("Equation has no roots");
         }
     }
-    public static class Human {
-        private String name;
-        private String age;
-        private String country;
-        private String city;
-        private String street;
-        private String house;
-        private String quarter;
-        public String obtenirAdrecaCompleta() {
-            StringBuilder result = new StringBuilder();
-            return result
-                    .append(country)
-                    .append(", ")
-                    .append(city)
-                    .append(", ")
-                    .append(street)
-                    .append(", ")
-                    .append(house)
-                    .append(" ")
-                    .append(quarter).toString();
-        }
-    }
 
-    public static class Order {
-        private List<OrderLineItem> lineItems;
-        private double taxRate;
 
-        public Order(List<OrderLineItem> lineItems, double taxRate) {
-            this.lineItems = lineItems;
-            this.taxRate = taxRate;
-        }
-
-        public double calculateTotalPrice() {
-            double subtotal = 0.0;
-            for (OrderLineItem item : lineItems) {
-                subtotal += item.getPrice();
-            }
-            double tax = subtotal * taxRate;
-            return subtotal + tax;
-        }
-    }
-
-     public class OrderLineItem {
-        private String productName;
-        private int quantity;
-        private double price;
-
-        public OrderLineItem(String productName, int quantity, double price) {
-            this.productName = productName;
-            this.quantity = quantity;
-            this.price = price;
-        }
-        public double getPrice() {
-            return price * quantity;
-        }
-    }
-
-    public class Customer {
-        private String firstName;
-        private String lastName;
-
-        public Customer(String firstName, String lastName) {
-            this.firstName = firstName;
-            this.lastName = lastName;
-        }
-
-        public String getFullName() {
-            return firstName + " " + lastName;
-        }
-    }
 }
