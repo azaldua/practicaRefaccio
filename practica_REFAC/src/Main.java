@@ -5,7 +5,8 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        String p = "Proves";
+        //REFACT: La variable p no se utiliza. Se puede eliminar
+//        String p = "Proves";
 
         int opcio;
         do {
