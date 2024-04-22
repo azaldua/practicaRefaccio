@@ -10,7 +10,7 @@ public class Main {
         // REFACT: Afegit funcio del scanner perqué es pugui posar espais a l'hora d'introduir dades.
         scan.useDelimiter("\\n");
         //String p = "Proves";
-        //REFACT: eliminada la variable p que no s'utilitzava en cap part del codi.
+        // REFACT: Eliminada la variable p que no s'utilitzava en cap part del codi.
 
         int opcio;
         do {
@@ -24,7 +24,7 @@ public class Main {
             System.out.println("2. Calcul equació de segon grau ");
             System.out.println("3. Preu total de una comanda amb els productes Poma,Clau,Tirita");
             System.out.println("4. Mostar adreça completa d'un humá");
-            System.out.println("5. ");
+            System.out.println("5. Creacio d'un client");
             System.out.println("0. Acabar");
 
             opcio = scan.nextInt();
