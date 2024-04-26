@@ -10,4 +10,6 @@ Hemos hecho extraccion de clases con las clases:
 -Customer
 -Human
 -Order
--OrderLineItem
+-OrderLineItem.
+
+Hemos refactorizado el metodo max (que devuelve un bolean) ya que el uso de if else es inecesario.
