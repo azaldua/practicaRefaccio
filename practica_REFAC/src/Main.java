@@ -56,21 +56,27 @@ public class Main {
         }
     }
     public static void calcEquacioSegongrau(double a, double b, double c) {
-        double D = b * b - 4 * a * c; //TODO: cambiar la D
-        if (D > 0) {
+        double calculDeRaiz = b * b - 4 * a * c;
+        if (calculDeRaiz > 0) {
             double x1, x2;
-            x1 = (-b - Math.sqrt(D)) / (2 * a);
-            x2 = (-b + Math.sqrt(D)) / (2 * a);
+            x1 = resultatCalc2nGr(b,a,calculDeRaiz,false);
+            x2 = resultatCalc2nGr(b,a,calculDeRaiz,true);
             System.out.println("x1 = " + x1 + ", x2 = " + x2);
         }
-        else if (D == 0) {
+        else if (calculDeRaiz == 0) {
             double x;
-            x = -b / (2 * a);
+            x = resultatCalc2nGr(b,a,calculDeRaiz,false);
             System.out.println("x = " + x);
         }
         else {
             System.out.println("Equation has no roots");
         }
+    }
+    public static double resultatCalc2nGr(double b, double a, double calculDeRaiz, boolean positiu)
+    {
+        if(positiu && calculDeRaiz != 0) return (-b + Math.sqrt(calculDeRaiz)) / (2 * a);
+        else if (!positiu && calculDeRaiz != 0) return (-b - Math.sqrt(calculDeRaiz)) / (2 * a);
+        else return (-b / (2 * a));
     }
     public static class Human {
         private String name;
