@@ -27,18 +27,17 @@ public class Main {
                     int num1 = scan.nextInt();
                     System.out.println("intro: ");
                     int num2 = scan.nextInt();
-                    if (max(num1,num2)) {
+                    if (max(num1, num2)) {
                         System.out.println("El primer número es más grande.");
-                    }
-                    else System.out.println("El segundo número es más grande.");
+                    } else System.out.println("El segundo número es más grande.");
                     break;
                 case 2:
                     System.out.print("Introduce el coeficiente A: ");
-                    double coeficienteA= scan.nextDouble();
+                    double coeficienteA = scan.nextDouble();
                     System.out.print("Introduce el coeficiente B: ");
-                    double coeficienteB= scan.nextDouble();
+                    double coeficienteB = scan.nextDouble();
                     System.out.print("Introduce el coeficiente C: ");
-                    double coeficienteC= scan.nextDouble();
+                    double coeficienteC = scan.nextDouble();
                     calcEquacioSegongrau(coeficienteA, coeficienteB, coeficienteC);
                     break;
                 case 3:
@@ -59,9 +58,11 @@ public class Main {
             }
         } while (opcio != 0);
     }
+
     /**
      * Esta función la podemos usar para comprobar si un parámetro es mayor a otro para que nos devuelva true o false.
      * Refact. El uso de if else es inecesario.
+     *
      * @return Dependiendo de los parámetros de entrada, devuelve true o false.
      */
     public static boolean max(int a, int b) {
@@ -72,33 +73,37 @@ public class Main {
     /**
      * Esta función se puede usar par calcular raíces de una equación cuadrática.
      * REFACT Cambiar el nombre de las variables por nombres más descriptivos.
-     *
      */
     public static void calcEquacioSegongrau(double coeficienteA, double coeficienteB, double coeficienteC) {
         double discriminant = coeficienteB * coeficienteB - 4 * coeficienteA * coeficienteC;
         if (discriminant > 0) {
             double x1, x2;
-            x1 = getResultat(discriminant,coeficienteA,coeficienteB,'+' );
-            x2 = getResultat(discriminant,coeficienteA,coeficienteB,'-' );
+            x1 = getResultatEcuacio(discriminant, coeficienteA, coeficienteB, '+');
+            x2 = getResultatEcuacio(discriminant, coeficienteA, coeficienteB, '-');
             System.out.println("x1 = " + x1 + ", x2 = " + x2);
-        }
-        else if (discriminant == 0) {
+        } else if (discriminant == 0) {
             double x;
-            x = getResultat(discriminant,coeficienteA,coeficienteB,'*' );
+            x = getResultatEcuacio(discriminant, coeficienteA, coeficienteB, '*');
             System.out.println("x = " + x);
-        }
-        else {
+        } else {
             System.out.println("Equation has no roots");
         }
     }
-    public static double getResultat(double discriminant, double coeficienteA, double coeficienteB, char signo){
-        if (signo=='+'){
-            return  (-coeficienteB - Math.sqrt(discriminant)) / (2 * coeficienteA);
-        }
-        if (signo=='-'){
-            return  (-coeficienteB + Math.sqrt(discriminant)) / (2 * coeficienteA);
-        }
-        if (signo=='*'){
+
+    /**
+     * Funcion para calcular los diferentes parametros de la ecuacion
+     * @param discriminant parametro de entrada
+     * @param coeficienteA parametro de entrada
+     * @param coeficienteB parametro de entrada
+     * @param signo operador necesario para identificar la operacion requerida
+     * @return Devuelve el resultado
+     */
+    public static double getResultatEcuacio(double discriminant, double coeficienteA, double coeficienteB, char signo) {
+        if (signo == '+') {
+            return (-coeficienteB - Math.sqrt(discriminant)) / (2 * coeficienteA);
+        } else if (signo == '-') {
+            return (-coeficienteB + Math.sqrt(discriminant)) / (2 * coeficienteA);
+        } else if (signo == '*') {
             return -coeficienteB / (2 * coeficienteA);
         }
         return -1;
