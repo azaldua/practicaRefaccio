@@ -5,8 +5,11 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        String p = "Proves";
+        //REFACT: La variable p no se utiliza. Se puede eliminar
+//        String p = "Proves";
 
+
+        // MENÚ CON SELECCIÓN MULTIPLE PARA REALIZAR DIFERENTES OPERACIONES
         int opcio;
         do {
             System.out.println("1. ");
@@ -24,20 +27,29 @@ public class Main {
                     int num1 = scan.nextInt();
                     System.out.println("intro: ");
                     int num2 = scan.nextInt();
-                    if (max(num1,num2)) {
-                        System.out.println("aaa");
-                    }
-                    else System.out.println("bbb");
+                    if (max(num1, num2)) {
+                        System.out.println("El primer número es más grande.");
+                    } else System.out.println("El segundo número es más grande.");
                     break;
                 case 2:
-                    double a=2;
-                    double b=3;
-                    double c=1;
-                    calcEquacioSegongrau(a, b, c);
+                    System.out.print("Introduce el coeficiente A: ");
+                    double coeficienteA = scan.nextDouble();
+                    System.out.print("Introduce el coeficiente B: ");
+                    double coeficienteB = scan.nextDouble();
+                    System.out.print("Introduce el coeficiente C: ");
+                    double coeficienteC = scan.nextDouble();
+                    calcEquacioSegongrau(coeficienteA, coeficienteB, coeficienteC);
                     break;
                 case 3:
                     List<OrderLineItem> lineItems = null;
-                    Order asd = new Order(lineItems, 5.5);
+                    //REFACT: El objeto asd no se utiliza. Por lo que se puede eliminar/comentar.
+//                    Order asd = new Order(lineItems, 5.5);
+                    break;
+                case 4:
+                    System.out.println("Método en mantenimiento.");
+                    break;
+                case 5:
+                    Order.calculateTotalPrice();
                     break;
                 case 0:
                     break;
@@ -46,100 +58,55 @@ public class Main {
             }
         } while (opcio != 0);
     }
+
+    /**
+     * Esta función la podemos usar para comprobar si un parámetro es mayor a otro para que nos devuelva true o false.
+     * Refact. El uso de if else es inecesario.
+     *
+     * @return Dependiendo de los parámetros de entrada, devuelve true o false.
+     */
     public static boolean max(int a, int b) {
-        if(a > b) {
-            return true;
-        } else if (a == b) {
-            return false;
-        } else {
-            return false;
-        }
+        return a > b;
+
     }
-    public static void calcEquacioSegongrau(double a, double b, double c) {
-        double D = b * b - 4 * a * c;
-        if (D > 0) {
+
+    /**
+     * Esta función se puede usar par calcular raíces de una equación cuadrática.
+     * REFACT Cambiar el nombre de las variables por nombres más descriptivos + Sustituir las operaciones por un método (getResultatEcuacio)
+     */
+    public static void calcEquacioSegongrau(double coeficienteA, double coeficienteB, double coeficienteC) {
+        double discriminant = coeficienteB * coeficienteB - 4 * coeficienteA * coeficienteC;
+        if (discriminant > 0) {
             double x1, x2;
-            x1 = (-b - Math.sqrt(D)) / (2 * a);
-            x2 = (-b + Math.sqrt(D)) / (2 * a);
+            x1 = getResultatEcuacio(discriminant, coeficienteA, coeficienteB, '+');
+            x2 = getResultatEcuacio(discriminant, coeficienteA, coeficienteB, '-');
             System.out.println("x1 = " + x1 + ", x2 = " + x2);
-        }
-        else if (D == 0) {
+        } else if (discriminant == 0) {
             double x;
-            x = -b / (2 * a);
+            x = getResultatEcuacio(discriminant, coeficienteA, coeficienteB, '*');
             System.out.println("x = " + x);
-        }
-        else {
+        } else {
             System.out.println("Equation has no roots");
         }
     }
-    public static class Human {
-        private String name;
-        private String age;
-        private String country;
-        private String city;
-        private String street;
-        private String house;
-        private String quarter;
-        public String obtenirAdrecaCompleta() {
-            StringBuilder result = new StringBuilder();
-            return result
-                    .append(country)
-                    .append(", ")
-                    .append(city)
-                    .append(", ")
-                    .append(street)
-                    .append(", ")
-                    .append(house)
-                    .append(" ")
-                    .append(quarter).toString();
+
+    /**
+     * Funcion para calcular los diferentes parametros de la ecuacion
+     *
+     * @param discriminant parametro de entrada
+     * @param coeficienteA parametro de entrada
+     * @param coeficienteB parametro de entrada
+     * @param signo        operador necesario para identificar la operacion requerida
+     * @return Devuelve el resultado
+     */
+    public static double getResultatEcuacio(double discriminant, double coeficienteA, double coeficienteB, char signo) {
+        if (signo == '+') {
+            return (-coeficienteB - Math.sqrt(discriminant)) / (2 * coeficienteA);
+        } else if (signo == '-') {
+            return (-coeficienteB + Math.sqrt(discriminant)) / (2 * coeficienteA);
+        } else if (signo == '*') {
+            return -coeficienteB / (2 * coeficienteA);
         }
-    }
-
-    public static class Order {
-        private List<OrderLineItem> lineItems;
-        private double taxRate;
-
-        public Order(List<OrderLineItem> lineItems, double taxRate) {
-            this.lineItems = lineItems;
-            this.taxRate = taxRate;
-        }
-
-        public double calculateTotalPrice() {
-            double subtotal = 0.0;
-            for (OrderLineItem item : lineItems) {
-                subtotal += item.getPrice();
-            }
-            double tax = subtotal * taxRate;
-            return subtotal + tax;
-        }
-    }
-
-     public class OrderLineItem {
-        private String productName;
-        private int quantity;
-        private double price;
-
-        public OrderLineItem(String productName, int quantity, double price) {
-            this.productName = productName;
-            this.quantity = quantity;
-            this.price = price;
-        }
-        public double getPrice() {
-            return price * quantity;
-        }
-    }
-
-    public class Customer {
-        private String firstName;
-        private String lastName;
-
-        public Customer(String firstName, String lastName) {
-            this.firstName = firstName;
-            this.lastName = lastName;
-        }
-
-        public String getFullName() {
-            return firstName + " " + lastName;
-        }
+        return -1;
     }
 }
