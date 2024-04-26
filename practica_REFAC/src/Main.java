@@ -72,7 +72,7 @@ public class Main {
 
     /**
      * Esta función se puede usar par calcular raíces de una equación cuadrática.
-     * REFACT Cambiar el nombre de las variables por nombres más descriptivos.
+     * REFACT Cambiar el nombre de las variables por nombres más descriptivos + Sustituir las opeeraciones por un método (getResultatEcuacio)
      */
     public static void calcEquacioSegongrau(double coeficienteA, double coeficienteB, double coeficienteC) {
         double discriminant = coeficienteB * coeficienteB - 4 * coeficienteA * coeficienteC;
@@ -92,10 +92,11 @@ public class Main {
 
     /**
      * Funcion para calcular los diferentes parametros de la ecuacion
+     *
      * @param discriminant parametro de entrada
      * @param coeficienteA parametro de entrada
      * @param coeficienteB parametro de entrada
-     * @param signo operador necesario para identificar la operacion requerida
+     * @param signo        operador necesario para identificar la operacion requerida
      * @return Devuelve el resultado
      */
     public static double getResultatEcuacio(double discriminant, double coeficienteA, double coeficienteB, char signo) {

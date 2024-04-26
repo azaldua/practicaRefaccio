@@ -1,4 +1,5 @@
 # Practica de Refaccio (UF2 de M05)
+
 - Cal que afegiu tota la refacció que trobeu necessària
 - Important marcar els canvis amb una etqueta com ara REFACT
 - Deixa clar quina refacció estàs fent i si cal justifica-ho
@@ -7,10 +8,10 @@
 - No fusionis en cap cas la teva branca amb la master
 
 - Hemos hecho extraccion de clases con las clases:
- -Customer
- -Human
- -Order
- -OrderLineItem.
+  -Customer
+  -Human
+  -Order
+  -OrderLineItem.
 
 - Hemos refactorizado el metodo max (que devuelve un bolean) ya que el uso de if else es inecesario.
 
