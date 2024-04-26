@@ -6,14 +6,14 @@ public class Main {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         String p = "Proves";
-
+        
         int opcio;
         do {
-            System.out.println("1. ");
-            System.out.println("2. ");
-            System.out.println("3. ");
-            System.out.println("4. ");
-            System.out.println("5. ");
+            System.out.println("1. Comparacio de numeros");
+            System.out.println("2. Calcul equació segon grau");
+            System.out.println("3. Ordenacio items");
+            System.out.println("4. Funció en desenvolupament");
+            System.out.println("5. Funció en desenvolupament");
             System.out.println("0. Acabar");
 
             opcio = scan.nextInt();
@@ -25,9 +25,9 @@ public class Main {
                     System.out.println("intro: ");
                     int num2 = scan.nextInt();
                     if (max(num1,num2)) {
-                        System.out.println("aaa");
+                        System.out.println("El primer numero és més gran");
                     }
-                    else System.out.println("bbb");
+                    else System.out.println("El segon numero és més gran");
                     break;
                 case 2:
                     double a=2;
@@ -38,6 +38,12 @@ public class Main {
                 case 3:
                     List<OrderLineItem> lineItems = null;
                     Order asd = new Order(lineItems, 5.5);
+                    break;
+                case 4:
+                    System.out.println("Funció en desenvolupament!");
+                    break;
+                case 5:
+                    System.out.println("Funció en desenvolupament!");
                     break;
                 case 0:
                     break;
@@ -56,7 +62,7 @@ public class Main {
         }
     }
     public static void calcEquacioSegongrau(double a, double b, double c) {
-        double D = b * b - 4 * a * c; //TODO: cambiar la D
+        double D = b * b - 4 * a * c; //TODO: cambiar la D 
         if (D > 0) {
             double x1, x2;
             x1 = (-b - Math.sqrt(D)) / (2 * a);
@@ -104,14 +110,7 @@ public class Main {
             this.taxRate = taxRate;
         }
 
-        public double calculateTotalPrice() {
-            double subtotal = 0.0;
-            for (OrderLineItem item : lineItems) {
-                subtotal += item.getPrice();
-            }
-            double tax = subtotal * taxRate;
-            return subtotal + tax;
-        }
+        
     }
 
      public class OrderLineItem {
