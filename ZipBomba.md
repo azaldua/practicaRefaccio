@@ -6,9 +6,9 @@ for (int i = 0; i < 10000000000000; i++)
     System.out.println("Uted hizo boom X2");
 }
 
-- Menu 
-- La funcion del calculo de 2 grado
-- Extracción de classes
-- Calxculate total price 
-- append
-- actualiza perro
+- Menu (Josito)
+- La funcion del calculo de 2 grado (Xavi)
+- Extracción de classes (David)
+- Calxculate total price (Alvarito)
+- append (David)
+- actualiza perro 
