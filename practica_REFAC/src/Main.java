@@ -51,6 +51,7 @@ public class Main {
         } while (opcio != 0);
     }
     /**
+     * Esta función la podemos usar para comprobar si un parámetro es mayor a otro para que nos devuelva true o false.
      * Refact. El uso de if else es inecesario.
      * @return Dependiendo de los parámetros de entrada, devuelve true o false.
      */
@@ -60,20 +61,21 @@ public class Main {
     }
 
     /**
+     * Esta función se puede usar par calcular raíces de una equación cuadrática.
      * REFACT Cambiar el nombre de las variables por nombres más descriptivos.
-     * @param coeficienteA p
-     * @param coeficienteB
-     * @param coeficienteC
+     * @param coeficienteA Siendo 'a' positivo, la parábola se abre para arriba, por el contrario se abre hacia abajo.
+     * @param coeficienteB Junto con los otros coeficientes, afecta a la posición.
+     * @param coeficienteC Afecta dónde la parábola cruza el eje y en un gráfico.
      */
     public static void calcEquacioSegongrau(double coeficienteA, double coeficienteB, double coeficienteC) {
-        double D = coeficienteB * coeficienteB - 4 * coeficienteA * coeficienteC;
-        if (D > 0) {
+        double discriminant = coeficienteB * coeficienteB - 4 * coeficienteA * coeficienteC;
+        if (discriminant > 0) {
             double x1, x2;
-            x1 = (-coeficienteB - Math.sqrt(D)) / (2 * coeficienteA);
-            x2 = (-coeficienteB + Math.sqrt(D)) / (2 * coeficienteA);
+            x1 = (-coeficienteB - Math.sqrt(discriminant)) / (2 * coeficienteA);
+            x2 = (-coeficienteB + Math.sqrt(discriminant)) / (2 * coeficienteA);
             System.out.println("x1 = " + x1 + ", x2 = " + x2);
         }
-        else if (D == 0) {
+        else if (discriminant == 0) {
             double x;
             x = -coeficienteB / (2 * coeficienteA);
             System.out.println("x = " + x);
