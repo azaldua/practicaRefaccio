@@ -3,6 +3,7 @@
  * Este método construye y devuelve una cadena con información personal de una persona incluyendo país, ciudad, calle, número de casa y barrio.
  * @return Una cadena con la dirección de la persona en cuestión.
  */
+//No se puede crear ningun Human por qué hay constructor. Debido a eso la funcion 'obtenirAdrecaCompleta' esta obsoleta
 public class Human {
     private String name;
     private String age;
@@ -11,6 +12,9 @@ public class Human {
     private String street;
     private String house;
     private String quarter;
+
+
+
     public String obtenirAdrecaCompleta() {
         StringBuilder result = new StringBuilder();
         return result

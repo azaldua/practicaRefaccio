@@ -2,6 +2,7 @@
  * Representa un artículo con unas variables para el nombre de producto, la cantidad y el precio.
  */
 public class OrderLineItem {
+
     private String productName;
     private int quantity;
     private double price;
@@ -16,6 +17,14 @@ public class OrderLineItem {
         this.productName = productName;
         this.quantity = quantity;
         this.price = price;
+    }
+    //Hemos añadido los getters siguientes:
+    public String getProductName() {
+        return productName;
+    }
+
+    public int getQuantity() {
+        return quantity;
     }
 
     /**
