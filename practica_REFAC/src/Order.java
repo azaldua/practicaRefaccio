@@ -3,8 +3,8 @@ import java.util.List;
  * Representa un pedido con una lista de artículos y una tasa de impuestos.
  */
 public class Order {
-    private List<OrderLineItem> lineItems;
-    private double taxRate;
+    private static List<OrderLineItem> lineItems;
+    private static double taxRate;
 
     /**
      * Crea una nueva instancia de la clase Order.
@@ -22,7 +22,7 @@ public class Order {
      * Los impuestos se calculan multiplicando el subtotal (la suma de los precios de los artículos) por la tasa de impuestos.
      * @return Un valor de tipo double que representa el precio total del pedido incluyendo impuestos.
      */
-    public double calculateTotalPrice() {
+    public static double calculateTotalPrice() {
         double subtotal = 0.0;
         for (OrderLineItem item : lineItems) {
             subtotal += item.getPrice();

@@ -28,9 +28,9 @@ public class Main {
                     System.out.println("intro: ");
                     int num2 = scan.nextInt();
                     if (max(num1,num2)) {
-                        System.out.println("aaa");
+                        System.out.println("El primer número es més gran");
                     }
-                    else System.out.println("bbb");
+                    else System.out.println("El segon número es més gran");
                     break;
                 case 2:
                     double a=2;
@@ -42,6 +42,12 @@ public class Main {
                     List<OrderLineItem> lineItems = null;
                     //REFACT: El objeto asd no se utiliza. Por lo que se puede eliminar/comentar.
 //                    Order asd = new Order(lineItems, 5.5);
+                    break;
+                case 4:
+
+                    break;
+                case 5:
+                    Order.calculateTotalPrice();
                     break;
                 case 0:
                     break;
@@ -94,6 +100,4 @@ public class Main {
         }
         return -1;
     }
-
-
 }
