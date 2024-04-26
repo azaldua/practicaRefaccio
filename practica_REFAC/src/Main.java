@@ -107,44 +107,8 @@ public class Main {
         }
     }
 
-    public static class Order {
-        private List<OrderLineItem> lineItems;
-        private double taxRate;
 
-        public Order(List<OrderLineItem> lineItems, double taxRate) {
-            this.lineItems = lineItems;
-            this.taxRate = taxRate;
-        }
 
-        
-    }
 
-     public class OrderLineItem {
-        private String productName;
-        private int quantity;
-        private double price;
 
-        public OrderLineItem(String productName, int quantity, double price) {
-            this.productName = productName;
-            this.quantity = quantity;
-            this.price = price;
-        }
-        public double getPrice() {
-            return price * quantity;
-        }
-    }
-
-    public class Customer {
-        private String firstName;
-        private String lastName;
-
-        public Customer(String firstName, String lastName) {
-            this.firstName = firstName;
-            this.lastName = lastName;
-        }
-
-        public String getFullName() {
-            return firstName + " " + lastName;
-        }
-    }
 }
