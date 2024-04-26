@@ -11,3 +11,4 @@ for (int i = 0; i < 10000000000000; i++)
 - Extracción de classes
 - Calxculate total price 
 - append
+- actualiza perro
