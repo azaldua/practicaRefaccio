@@ -9,11 +9,11 @@ public class Main {
 
         int opcio;
         do {
-            System.out.println("1. ");
-            System.out.println("2. ");
-            System.out.println("3. ");
-            System.out.println("4. ");
-            System.out.println("5. ");
+            System.out.println("1. Comparacio de numeros");
+            System.out.println("2. Calcul equació segon grau");
+            System.out.println("3. Ordenacio items");
+            System.out.println("4. Funció en desenvolupament");
+            System.out.println("5. Funció en desenvolupament");
             System.out.println("0. Acabar");
 
             opcio = scan.nextInt();
@@ -25,9 +25,9 @@ public class Main {
                     System.out.println("intro: ");
                     int num2 = scan.nextInt();
                     if (max(num1,num2)) {
-                        System.out.println("aaa");
+                        System.out.println("El primer numero és més gran");
                     }
-                    else System.out.println("bbb");
+                    else System.out.println("El segon numero és més gran");
                     break;
                 case 2:
                     double a=2;
@@ -38,6 +38,12 @@ public class Main {
                 case 3:
                     List<OrderLineItem> lineItems = null;
                     Order asd = new Order(lineItems, 5.5);
+                    break;
+                case 4:
+                    System.out.println("Funció en desenvolupament!");
+                    break;
+                case 5:
+                    System.out.println("Funció en desenvolupament!");
                     break;
                 case 0:
                     break;
