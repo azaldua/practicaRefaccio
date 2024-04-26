@@ -18,4 +18,4 @@
 
 - Casos 4,5 en el main añadidos.
 
-- Uso del método calculateTotalPrice() En el caso 5 del Main.
+- Uso del método calculateTotalPrice() En el caso 5 del Main

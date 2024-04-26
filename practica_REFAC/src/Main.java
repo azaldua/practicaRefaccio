@@ -33,10 +33,10 @@ public class Main {
                     else System.out.println("El segon número es més gran");
                     break;
                 case 2:
-                    double a=2;
-                    double b=3;
-                    double c=1;
-                    calcEquacioSegongrau(a, b, c);
+                    double coeficienteA=2;
+                    double coeficienteB=3;
+                    double coeficienteC=1;
+                    calcEquacioSegongrau(coeficienteA, coeficienteB, coeficienteC);
                     break;
                 case 3:
                     List<OrderLineItem> lineItems = null;
@@ -44,7 +44,7 @@ public class Main {
 //                    Order asd = new Order(lineItems, 5.5);
                     break;
                 case 4:
-
+                    System.out.println("Método en mantenimiento.");
                     break;
                 case 5:
                     Order.calculateTotalPrice();
