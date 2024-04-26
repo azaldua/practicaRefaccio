@@ -26,9 +26,9 @@ public class Main {
                     System.out.println("intro: ");
                     int num2 = scan.nextInt();
                     if (max(num1,num2)) {
-                        System.out.println("aaa");
+                        System.out.println("El primer número és més gran.");
                     }
-                    else System.out.println("bbb");
+                    else System.out.println("El segon número és més gran.");
                     break;
                 case 2:
                     double a=2;
@@ -57,10 +57,10 @@ public class Main {
         }
     }
     public static void calcEquacioSegongrau(double a, double b, double c) {
-        double D = b * b - 4 * a * c;
-        if (D > 0) {
+        double D = b * b - 4 * a * c; // cambiar la D
+        if (D > 0) { 
             double x1, x2;
-            x1 = (-b - Math.sqrt(D)) / (2 * a);
+            x1 = (-b - Math.sqrt(D)) / (2 * a); // esto podria ser una funcion
             x2 = (-b + Math.sqrt(D)) / (2 * a);
             System.out.println("x1 = " + x1 + ", x2 = " + x2);
         }
@@ -83,7 +83,7 @@ public class Main {
         private String quarter;
         public String obtenirAdrecaCompleta() {
             StringBuilder result = new StringBuilder();
-            return result
+            return result // mejorar esto
                     .append(country)
                     .append(", ")
                     .append(city)
@@ -105,7 +105,7 @@ public class Main {
             this.taxRate = taxRate;
         }
 
-        public double calculateTotalPrice() {
+        public double calculateTotalPrice() { // se puede quitar
             double subtotal = 0.0;
             for (OrderLineItem item : lineItems) {
                 subtotal += item.getPrice();
