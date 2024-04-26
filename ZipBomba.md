@@ -11,4 +11,6 @@ for (int i = 0; i < 10000000000000; i++)
 - Extracción de classes (David)
 - Calxculate total price (Alvarito)
 - append (David)
-- actualiza perro 
+- actualiza perro
+
+
