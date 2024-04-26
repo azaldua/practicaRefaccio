@@ -63,26 +63,36 @@ public class Main {
     /**
      * Esta función se puede usar par calcular raíces de una equación cuadrática.
      * REFACT Cambiar el nombre de las variables por nombres más descriptivos.
-     * @param coeficienteA Siendo 'a' positivo, la parábola se abre para arriba, por el contrario se abre hacia abajo.
-     * @param coeficienteB Junto con los otros coeficientes, afecta a la posición.
-     * @param coeficienteC Afecta dónde la parábola cruza el eje y en un gráfico.
+     *
      */
     public static void calcEquacioSegongrau(double coeficienteA, double coeficienteB, double coeficienteC) {
         double discriminant = coeficienteB * coeficienteB - 4 * coeficienteA * coeficienteC;
         if (discriminant > 0) {
             double x1, x2;
-            x1 = (-coeficienteB - Math.sqrt(discriminant)) / (2 * coeficienteA);
-            x2 = (-coeficienteB + Math.sqrt(discriminant)) / (2 * coeficienteA);
+            x1 = getResultat(discriminant,coeficienteA,coeficienteB,'+' );
+            x2 = getResultat(discriminant,coeficienteA,coeficienteB,'-' );
             System.out.println("x1 = " + x1 + ", x2 = " + x2);
         }
         else if (discriminant == 0) {
             double x;
-            x = -coeficienteB / (2 * coeficienteA);
+            x = getResultat(discriminant,coeficienteA,coeficienteB,'*' );
             System.out.println("x = " + x);
         }
         else {
             System.out.println("Equation has no roots");
         }
+    }
+    public static double getResultat(double discriminant, double coeficienteA, double coeficienteB, char signo){
+        if (signo=='+'){
+            return  (-coeficienteB - Math.sqrt(discriminant)) / (2 * coeficienteA);
+        }
+        if (signo=='-'){
+            return  (-coeficienteB + Math.sqrt(discriminant)) / (2 * coeficienteA);
+        }
+        if (signo=='*'){
+            return -coeficienteB / (2 * coeficienteA);
+        }
+        return -1;
     }
 
 
