@@ -56,7 +56,7 @@ public class Main {
         }
     }
     public static void calcEquacioSegongrau(double a, double b, double c) {
-        double calculDeRaiz = b * b - 4 * a * c; //TODO: cambiar la D
+        double calculDeRaiz = b * b - 4 * a * c;
         if (calculDeRaiz > 0) {
             double x1, x2;
             x1 = resultatCalc2nGr(b,a,calculDeRaiz,false);
