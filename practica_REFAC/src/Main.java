@@ -28,14 +28,17 @@ public class Main {
                     System.out.println("intro: ");
                     int num2 = scan.nextInt();
                     if (max(num1,num2)) {
-                        System.out.println("El primer número es més gran");
+                        System.out.println("El primer número es más grande.");
                     }
-                    else System.out.println("El segon número es més gran");
+                    else System.out.println("El segundo número es más grande.");
                     break;
                 case 2:
-                    double coeficienteA=2;
-                    double coeficienteB=3;
-                    double coeficienteC=1;
+                    System.out.print("Introduce el coeficiente A: ");
+                    double coeficienteA= scan.nextDouble();
+                    System.out.print("Introduce el coeficiente B: ");
+                    double coeficienteB= scan.nextDouble();
+                    System.out.print("Introduce el coeficiente C: ");
+                    double coeficienteC= scan.nextDouble();
                     calcEquacioSegongrau(coeficienteA, coeficienteB, coeficienteC);
                     break;
                 case 3:
