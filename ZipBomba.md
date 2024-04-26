@@ -7,7 +7,7 @@ for (int i = 0; i < 10000000000000; i++)
 }
 
 - Menu 
-- La funcion del calculo de 2 grado
+- La funcion del calculo de 2 grado Pa Xavi
 - Extracción de classes
 - Calxculate total price 
 - append
