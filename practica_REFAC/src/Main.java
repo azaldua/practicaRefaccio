@@ -2,6 +2,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Main {
+    
     public static void main(String[] args) {
 //REFACT1: Extracció de mètode
 //          Agafar tot el codi del menu i passar-lo al mètode "menu()".
@@ -115,7 +116,6 @@ public class Main {
                     .append(quarter).toString();
         }
     }*/
-
     //REFACT7:  Extracció de classe Order i OrderLineItem
 /*    public static class Order {
         private List<OrderLineItem> lineItems;
