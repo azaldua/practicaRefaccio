@@ -2,12 +2,14 @@ import java.io.File;
 import java.util.List;
 import java.util.Scanner;
 
+
 public class Main {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        String p = "Proves";
+        String proves = "Proves";
 
-        int opcio;
+        //#Refactor
+        int opcio_usuari;
         do {
             System.out.println("1. ");
             System.out.println("2. ");
@@ -16,9 +18,9 @@ public class Main {
             System.out.println("5. ");
             System.out.println("0. Acabar");
 
-            opcio = scan.nextInt();
+            opcio_usuari = scan.nextInt();
             scan.nextLine();
-            switch (opcio) {
+            switch (opcio_usuari) {
                 case 1:
                     System.out.println("intro: ");
                     int num1 = scan.nextInt();
@@ -44,7 +46,7 @@ public class Main {
                 default:
                     System.out.println("ATENCIÓ!!! \nHa de ser un valor entre 0 i 5");
             }
-        } while (opcio != 0);
+        } while (opcio_usuari != 0);
     }
     public static boolean max(int a, int b) {
         if(a > b) {
@@ -70,76 +72,6 @@ public class Main {
         }
         else {
             System.out.println("Equation has no roots");
-        }
-    }
-    public static class Human {
-        private String name;
-        private String age;
-        private String country;
-        private String city;
-        private String street;
-        private String house;
-        private String quarter;
-        public String obtenirAdrecaCompleta() {
-            StringBuilder result = new StringBuilder();
-            return result
-                    .append(country)
-                    .append(", ")
-                    .append(city)
-                    .append(", ")
-                    .append(street)
-                    .append(", ")
-                    .append(house)
-                    .append(" ")
-                    .append(quarter).toString();
-        }
-    }
-
-    public static class Order {
-        private List<OrderLineItem> lineItems;
-        private double taxRate;
-
-        public Order(List<OrderLineItem> lineItems, double taxRate) {
-            this.lineItems = lineItems;
-            this.taxRate = taxRate;
-        }
-
-        public double calculateTotalPrice() {
-            double subtotal = 0.0;
-            for (OrderLineItem item : lineItems) {
-                subtotal += item.getPrice();
-            }
-            double tax = subtotal * taxRate;
-            return subtotal + tax;
-        }
-    }
-
-     public class OrderLineItem {
-        private String productName;
-        private int quantity;
-        private double price;
-
-        public OrderLineItem(String productName, int quantity, double price) {
-            this.productName = productName;
-            this.quantity = quantity;
-            this.price = price;
-        }
-        public double getPrice() {
-            return price * quantity;
-        }
-    }
-
-    public class Customer {
-        private String firstName;
-        private String lastName;
-
-        public Customer(String firstName, String lastName) {
-            this.firstName = firstName;
-            this.lastName = lastName;
-        }
-
-        public String getFullName() {
-            return firstName + " " + lastName;
         }
     }
 }
