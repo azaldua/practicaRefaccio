@@ -5,10 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d9039d03-440c-4e2c-b6ba-755327690380" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/practica_REFAC/src/Customer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/practica_REFAC/src/Human.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/practica_REFAC/src/Order.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/practica_REFAC/src/OrderLineItem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/practica_REFAC/src/MathUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README_Andreu.md" beforeDir="false" afterPath="$PROJECT_DIR$/README_Andreu.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/practica_REFAC/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/practica_REFAC/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -69,7 +69,7 @@
       <updated>1715712996252</updated>
       <workItem from="1715712997206" duration="870000" />
       <workItem from="1715762705522" duration="1465000" />
-      <workItem from="1715890969105" duration="2885000" />
+      <workItem from="1715890969105" duration="7414000" />
     </task>
     <servers />
   </component>
