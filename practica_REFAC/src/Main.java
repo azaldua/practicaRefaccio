@@ -20,10 +20,10 @@ public class Main {
             switch (opcio) {
                 case 1:
                     System.out.println("Introdueix el primer número: ");
-                    int num1 = scan.nextInt();
+                    int primerNumero = scan.nextInt();
                     System.out.println("Introdueix el segon número: ");
-                    int num2 = scan.nextInt();
-                    if (max(num1,num2)) {
+                    int segonNumero = scan.nextInt();
+                    if (PrimerNumeroMesGran(primerNumero,segonNumero)) {
                         System.out.println("El primer número és més gran.");
                     }
                     else System.out.println("El segon número és més gran.");
@@ -32,29 +32,25 @@ public class Main {
                     double a=2;
                     double b=3;
                     double c=1;
-                    calcEquacioSegongrau(a, b, c);
+                    calcarEquacioSegongrau(a, b, c);
                     break;
                 case 3:
                     List<OrderLineItem> lineItems = null;
-                    Order asd = new Order(lineItems, 5.5);
+                    Comanda comanda = new Comanda(liniesComanda, 5.5);
                     break;
                 case 0:
                     break;
                 default:
-                    System.out.println("ATENCIÓ!!! \nHa de ser un valor entre 0 i 5");
+                    System.out.println("ATENCIÓ!!! \nHa de ser un valor entre 0 i 3");
             }
         } while (opcio != 0);
     }
-    public static boolean max(int a, int b) {
-        if(a > b) {
-            return true;
-        } else if (a == b) {
-            return false;
-        } else {
-            return false;
-        }
+    
+    public static boolean PrimerNumeroMesGran(int primerNumero, int segonNumero) {
+        return primerNumero > segonNumero;
     }
-    public static void calcEquacioSegongrau(double a, double b, double c) {
+    
+    public static void calcularEquacioSegongrau(double a, double b, double c) {
         double D = b * b - 4 * a * c; // cambiar la D
         if (D > 0) { 
             double x1, x2;
@@ -71,6 +67,7 @@ public class Main {
             System.out.println("Equation has no roots");
         }
     }
+    
     public static class Human {
         private String name;
         private String age;
@@ -123,6 +120,7 @@ public class Main {
             this.quantity = quantity;
             this.price = price;
         }
+         
         public double getPrice() {
             return price * quantity;
         }
