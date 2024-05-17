@@ -19,9 +19,9 @@ public class Main {
             scan.nextLine();
             switch (opcio) {
                 case 1:
-                    System.out.println("intro: ");
+                    System.out.println("Introdueix el primer número: ");
                     int num1 = scan.nextInt();
-                    System.out.println("intro: ");
+                    System.out.println("Introdueix el segon número: ");
                     int num2 = scan.nextInt();
                     if (max(num1,num2)) {
                         System.out.println("El primer número és més gran.");
