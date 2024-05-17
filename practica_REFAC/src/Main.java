@@ -1,3 +1,4 @@
+// Alberto i Marc
 import java.io.File;
 import java.util.List;
 import java.util.Scanner;
@@ -9,101 +10,95 @@ public class Main {
 
         int opcio;
         do {
-            System.out.println("1. ");
-            System.out.println("2. ");
-            System.out.println("3. ");
-            System.out.println("4. ");
-            System.out.println("5. ");
+            System.out.println("1. Comparar dos números");
+            System.out.println("2. Calcular equació de segon grau");
+            System.out.println("3. Crear una comanda");
+            System.out.println("4. En Manteniment...");
+            System.out.println("5. En Manteniment...");
             System.out.println("0. Acabar");
 
             opcio = scan.nextInt();
             scan.nextLine();
             switch (opcio) {
                 case 1:
-                    System.out.println("intro: ");
-                    int num1 = scan.nextInt();
-                    System.out.println("intro: ");
-                    int num2 = scan.nextInt();
-                    if (max(num1,num2)) {
-                        System.out.println("aaa");
+                    System.out.println("Introdueix el primer número: ");
+                    int primerNumero = scan.nextInt();
+                    System.out.println("Introdueix el segon número: ");
+                    int segonNumero = scan.nextInt();
+                    if (PrimerNumeroMesGran(primerNumero,segonNumero)) {
+                        System.out.println("El primer número és més gran.");
                     }
-                    else System.out.println("bbb");
+                    else System.out.println("El segon número és més gran.");
                     break;
                 case 2:
                     double a=2;
                     double b=3;
                     double c=1;
-                    calcEquacioSegongrau(a, b, c);
+                    calcarEquacioSegongrau(a, b, c);
                     break;
                 case 3:
                     List<OrderLineItem> lineItems = null;
-                    Order asd = new Order(lineItems, 5.5);
+                    Comanda comanda = new Comanda(liniesComanda, 5.5);
                     break;
                 case 0:
                     break;
                 default:
-                    System.out.println("ATENCIÓ!!! \nHa de ser un valor entre 0 i 5");
+                    System.out.println("ATENCIÓ!!! \nHa de ser un valor entre 0 i 3");
             }
         } while (opcio != 0);
     }
-    public static boolean max(int a, int b) {
-        if(a > b) {
-            return true;
-        } else if (a == b) {
-            return false;
-        } else {
-            return false;
-        }
+    
+    public static boolean PrimerNumeroMesGran(int primerNumero, int segonNumero) {
+        return primerNumero > segonNumero;
     }
-    public static void calcEquacioSegongrau(double a, double b, double c) {
-        double D = b * b - 4 * a * c;
-        if (D > 0) {
-            double x1, x2;
-            x1 = (-b - Math.sqrt(D)) / (2 * a);
-            x2 = (-b + Math.sqrt(D)) / (2 * a);
+    
+    //Millora funció cacularEquacioSegonGrau
+    public static void calcularEquacioSegonGrau(double a, double b, double c) {
+        double discriminant = b * b - 4 * a * c;
+        if (discriminant > 0) {
+            double x1 = (-b - Math.sqrt(discriminant)) / (2 * a);
+            double x2 = (-b + Math.sqrt(discriminant)) / (2 * a);
             System.out.println("x1 = " + x1 + ", x2 = " + x2);
-        }
-        else if (D == 0) {
-            double x;
-            x = -b / (2 * a);
+        } else if (discriminant == 0) {
+            double x = -b / (2 * a);
             System.out.println("x = " + x);
-        }
-        else {
-            System.out.println("Equation has no roots");
+        } else {
+            System.out.println("L'equació no té arrels reals");
         }
     }
-    public static class Human {
-        private String name;
-        private String age;
-        private String country;
-        private String city;
-        private String street;
-        private String house;
-        private String quarter;
+    
+    public static class Persona {
+        private String nom;
+        private String edat;
+        private String pais;
+        private String ciutat;
+        private String carrer;
+        private String casa;
+        private String barri;
+
         public String obtenirAdrecaCompleta() {
-            StringBuilder result = new StringBuilder();
-            return result
-                    .append(country)
+            StringBuilder adreca = new StringBuilder();
+            return adreca
+                    .append(pais)
                     .append(", ")
-                    .append(city)
+                    .append(ciutat)
                     .append(", ")
-                    .append(street)
+                    .append(carrer)
                     .append(", ")
-                    .append(house)
+                    .append(casa)
                     .append(" ")
-                    .append(quarter).toString();
+                    .append(barri).toString();
         }
     }
 
-    public static class Order {
-        private List<OrderLineItem> lineItems;
-        private double taxRate;
+    public static class Comanda {
+        private List<LiniaComanda> liniesComanda;
+        private double taxa;
 
-        public Order(List<OrderLineItem> lineItems, double taxRate) {
-            this.lineItems = lineItems;
-            this.taxRate = taxRate;
+        public Comanda(List<LiniaComanda> liniesComanda, double taxa) {
+            this.liniesComanda = liniesComanda;
+            this.taxa = taxa;
         }
-
         public double calculateTotalPrice() {
             double subtotal = 0.0;
             for (OrderLineItem item : lineItems) {
@@ -114,32 +109,32 @@ public class Main {
         }
     }
 
-     public class OrderLineItem {
-        private String productName;
-        private int quantity;
-        private double price;
+    public static class LiniaComanda {
+        private String nomProducte;
+        private int quantitat;
+        private double preu;
 
-        public OrderLineItem(String productName, int quantity, double price) {
-            this.productName = productName;
-            this.quantity = quantity;
-            this.price = price;
+        public LiniaComanda(String nomProducte, int quantitat, double preu) {
+            this.nomProducte = nomProducte;
+            this.quantitat = quantitat;
+            this.preu = preu;
         }
-        public double getPrice() {
-            return price * quantity;
+
+        public double getPreu() {
+            return preu * quantitat;
         }
     }
+    public static class Client {
+        private String primerNom;
+        private String cognom;
 
-    public class Customer {
-        private String firstName;
-        private String lastName;
-
-        public Customer(String firstName, String lastName) {
-            this.firstName = firstName;
-            this.lastName = lastName;
+        public Client(String primerNom, String cognom) {
+            this.primerNom = primerNom;
+            this.cognom = cognom;
         }
 
-        public String getFullName() {
-            return firstName + " " + lastName;
+        public String obtenirNomComplet() {
+            return primerNom + " " + cognom;
         }
     }
 }
