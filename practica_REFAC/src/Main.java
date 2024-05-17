@@ -65,39 +65,39 @@ public class Main {
         }
     }
     
-    public static class Human {
-        private String name;
-        private String age;
-        private String country;
-        private String city;
-        private String street;
-        private String house;
-        private String quarter;
+    public static class Persona {
+        private String nom;
+        private String edat;
+        private String pais;
+        private String ciutat;
+        private String carrer;
+        private String casa;
+        private String barri;
+
         public String obtenirAdrecaCompleta() {
-            StringBuilder result = new StringBuilder();
-            return result // mejorar esto
-                    .append(country)
+            StringBuilder adreca = new StringBuilder();
+            return adreca
+                    .append(pais)
                     .append(", ")
-                    .append(city)
+                    .append(ciutat)
                     .append(", ")
-                    .append(street)
+                    .append(carrer)
                     .append(", ")
-                    .append(house)
+                    .append(casa)
                     .append(" ")
-                    .append(quarter).toString();
+                    .append(barri).toString();
         }
     }
 
-    public static class Order {
-        private List<OrderLineItem> lineItems;
-        private double taxRate;
+    public static class Comanda {
+        private List<LiniaComanda> liniesComanda;
+        private double taxa;
 
-        public Order(List<OrderLineItem> lineItems, double taxRate) {
-            this.lineItems = lineItems;
-            this.taxRate = taxRate;
+        public Comanda(List<LiniaComanda> liniesComanda, double taxa) {
+            this.liniesComanda = liniesComanda;
+            this.taxa = taxa;
         }
-
-        public double calculateTotalPrice() { // se puede quitar
+        public double calculateTotalPrice() {
             double subtotal = 0.0;
             for (OrderLineItem item : lineItems) {
                 subtotal += item.getPrice();
