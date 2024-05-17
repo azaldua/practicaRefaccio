@@ -107,33 +107,32 @@ public class Main {
         }
     }
 
-     public class OrderLineItem {
-        private String productName;
-        private int quantity;
-        private double price;
+    public static class LiniaComanda {
+        private String nomProducte;
+        private int quantitat;
+        private double preu;
 
-        public OrderLineItem(String productName, int quantity, double price) {
-            this.productName = productName;
-            this.quantity = quantity;
-            this.price = price;
+        public LiniaComanda(String nomProducte, int quantitat, double preu) {
+            this.nomProducte = nomProducte;
+            this.quantitat = quantitat;
+            this.preu = preu;
         }
-         
-        public double getPrice() {
-            return price * quantity;
+
+        public double getPreu() {
+            return preu * quantitat;
         }
     }
+    public static class Client {
+        private String primerNom;
+        private String cognom;
 
-    public class Customer {
-        private String firstName;
-        private String lastName;
-
-        public Customer(String firstName, String lastName) {
-            this.firstName = firstName;
-            this.lastName = lastName;
+        public Client(String primerNom, String cognom) {
+            this.primerNom = primerNom;
+            this.cognom = cognom;
         }
 
-        public String getFullName() {
-            return firstName + " " + lastName;
+        public String obtenirNomComplet() {
+            return primerNom + " " + cognom;
         }
     }
 }
