@@ -50,21 +50,18 @@ public class Main {
         return primerNumero > segonNumero;
     }
     
-    public static void calcularEquacioSegongrau(double a, double b, double c) {
-        double D = b * b - 4 * a * c; // cambiar la D
-        if (D > 0) { 
-            double x1, x2;
-            x1 = (-b - Math.sqrt(D)) / (2 * a); // esto podria ser una funcion
-            x2 = (-b + Math.sqrt(D)) / (2 * a);
+    //Millora funció cacularEquacioSegonGrau
+    public static void calcularEquacioSegonGrau(double a, double b, double c) {
+        double discriminant = b * b - 4 * a * c;
+        if (discriminant > 0) {
+            double x1 = (-b - Math.sqrt(discriminant)) / (2 * a);
+            double x2 = (-b + Math.sqrt(discriminant)) / (2 * a);
             System.out.println("x1 = " + x1 + ", x2 = " + x2);
-        }
-        else if (D == 0) {
-            double x;
-            x = -b / (2 * a);
+        } else if (discriminant == 0) {
+            double x = -b / (2 * a);
             System.out.println("x = " + x);
-        }
-        else {
-            System.out.println("Equation has no roots");
+        } else {
+            System.out.println("L'equació no té arrels reals");
         }
     }
     
