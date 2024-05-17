@@ -1,4 +1,4 @@
-// Alberto
+// Alberto i Marc
 import java.io.File;
 import java.util.List;
 import java.util.Scanner;
@@ -13,6 +13,8 @@ public class Main {
             System.out.println("1. Comparar dos números");
             System.out.println("2. Calcular equació de segon grau");
             System.out.println("3. Crear una comanda");
+            System.out.println("4. En Manteniment...");
+            System.out.println("5. En Manteniment...");
             System.out.println("0. Acabar");
 
             opcio = scan.nextInt();
