@@ -10,11 +10,9 @@ public class Main {
 
         int opcio;
         do {
-            System.out.println("1. ");
-            System.out.println("2. ");
-            System.out.println("3. ");
-            System.out.println("4. ");
-            System.out.println("5. ");
+            System.out.println("1. Comparar dos números");
+            System.out.println("2. Calcular equació de segon grau");
+            System.out.println("3. Crear una comanda");
             System.out.println("0. Acabar");
 
             opcio = scan.nextInt();
