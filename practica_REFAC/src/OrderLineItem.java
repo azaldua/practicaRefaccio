@@ -1,4 +1,5 @@
 public class OrderLineItem {
+    // separar la clase del main
     private String productName;
     private int quantity;
     private double price;

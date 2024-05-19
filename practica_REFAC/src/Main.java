@@ -5,7 +5,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         String p = "Proves";
-        
+        //Fer el menu més entenedor
         int opcio;
         do {
             System.out.println("1. Comparacio de numeros");
@@ -23,6 +23,7 @@ public class Main {
                     int num1 = scan.nextInt();
                     System.out.println("intro: ");
                     int num2 = scan.nextInt();
+                    //Aclarar la resposta (no era masa entenedor 'aaa' i 'bbb')
                     if (max(num1,num2)) {
                         System.out.println("El primer numero és més gran");
                     }
@@ -38,6 +39,7 @@ public class Main {
                     List<OrderLineItem> lineItems = null;
                     Order asd = new Order(lineItems, 5.5);
                     break;
+                    //crear la opció dels números 4 i 5
                 case 4:
                     System.out.println("Funció en desenvolupament!");
                     break;
@@ -64,6 +66,7 @@ public class Main {
         double calculDeRaiz = b * b - 4 * a * c;
         if (calculDeRaiz > 0) {
             double x1, x2;
+            //fer una funció per els calculs per poder fer la lectura més entenedora
             x1 = resultatCalc2nGr(b,a,calculDeRaiz,false);
             x2 = resultatCalc2nGr(b,a,calculDeRaiz,true);
             System.out.println("x1 = " + x1 + ", x2 = " + x2);

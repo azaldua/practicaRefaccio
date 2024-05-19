@@ -1,4 +1,5 @@
 public class Customer {
+    // separar la clase del main
     private String firstName;
     private String lastName;
 

@@ -1,4 +1,5 @@
 public class Human {
+    // separar la clase del main
     private String country;
     private String city;
     private String street;
