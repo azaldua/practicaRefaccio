@@ -3,55 +3,8 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
-        String p = "Proves";
         //Fer el menu més entenedor
-        int opcio;
-        do {
-            System.out.println("1. Comparacio de numeros");
-            System.out.println("2. Calcul equació segon grau");
-            System.out.println("3. Ordenacio items");
-            System.out.println("4. Funció en desenvolupament");
-            System.out.println("5. Funció en desenvolupament");
-            System.out.println("0. Acabar");
-
-            opcio = scan.nextInt();
-            scan.nextLine();
-            switch (opcio) {
-                case 1:
-                    System.out.println("intro: ");
-                    int num1 = scan.nextInt();
-                    System.out.println("intro: ");
-                    int num2 = scan.nextInt();
-                    //Aclarar la resposta (no era masa entenedor 'aaa' i 'bbb')
-                    if (max(num1,num2)) {
-                        System.out.println("El primer numero és més gran");
-                    }
-                    else System.out.println("El segon numero és més gran");
-                    break;
-                case 2:
-                    double a=2;
-                    double b=3;
-                    double c=1;
-                    calcEquacioSegongrau(a, b, c);
-                    break;
-                case 3:
-                    List<OrderLineItem> lineItems = null;
-                    Order asd = new Order(lineItems, 5.5);
-                    break;
-                    //crear la opció dels números 4 i 5
-                case 4:
-                    System.out.println("Funció en desenvolupament!");
-                    break;
-                case 5:
-                    System.out.println("Funció en desenvolupament!");
-                    break;
-                case 0:
-                    break;
-                default:
-                    System.out.println("ATENCIÓ!!! \nHa de ser un valor entre 0 i 5");
-            }
-        } while (opcio != 0);
+        selector();
     }
     public static boolean max(int a, int b) {
         if(a > b) {
@@ -85,5 +38,65 @@ public class Main {
         if(positiu && calculDeRaiz != 0) return (-b + Math.sqrt(calculDeRaiz)) / (2 * a);
         else if (!positiu && calculDeRaiz != 0) return (-b - Math.sqrt(calculDeRaiz)) / (2 * a);
         else return (-b / (2 * a));
+    }
+    public static mostrarMenu(){
+        System.out.println("1. Comparacio de numeros");
+        System.out.println("2. Calcul equació segon grau");
+        System.out.println("3. Ordenacio items");
+        System.out.println("4. Funció en desenvolupament");
+        System.out.println("5. Funció en desenvolupament");
+        System.out.println("0. Acabar");
+    }
+    public static void opcio1(){
+         System.out.println("intro: ");
+        int num1 = scan.nextInt();
+        System.out.println("intro: ");
+        int num2 = scan.nextInt();
+        //Aclarar la resposta (no era masa entenedor 'aaa' i 'bbb')
+        if (max(num1,num2)) {
+             System.out.println("El primer numero és més gran");
+        }
+        else System.out.println("El segon numero és més gran");
+    }
+    public static void opcio2(){
+        double a=2;
+        double b=3;
+        double c=1;
+        calcEquacioSegongrau(a, b, c);
+    }
+    public static void opcio3(){
+        List<OrderLineItem> lineItems = null;
+        Order asd = new Order(lineItems, 5.5);
+    }
+    public static void selector(){
+        Scanner scan = new Scanner(System.in);
+        String p = "Proves";        
+        String opcio;
+        do {
+            mostrarMenu();
+            opcio = scan.nextLine();
+            switch (opcio) {
+                case "1":
+                   opcio1();
+                    break;
+                case "2":
+                    opcio2();
+                    break;
+                case "3":
+                    opcio3();
+                    break;
+                    //crear la opció dels números 4 i 5
+                case "4":
+                    System.out.println("Funció en desenvolupament!");
+                    break;
+                case "5":
+                    System.out.println("Funció en desenvolupament!");
+                    break;
+                case "0":
+                    break;
+                default:
+                    System.out.println("ATENCIÓ!!! \nHa de ser un valor entre 0 i 5");
+            }
+        } while (opcio != 0);
     }
 }
