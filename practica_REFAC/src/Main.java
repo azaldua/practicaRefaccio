@@ -11,32 +11,38 @@ public class Main {
         //#Refactor
         int opcio_usuari;
         do {
-            System.out.println("1. Calcular el maixim entre dos valors");
-            System.out.println("2. ");
-            System.out.println("3. ");
-            System.out.println("4. ");
-            System.out.println("5. ");
-            System.out.println("0. Acabar");
+            menu();
 
             opcio_usuari = scan.nextInt();
             scan.nextLine();
             switch (opcio_usuari) {
                 case 1:
-                    System.out.println("intro: ");
-                    int num1 = scan.nextInt();
-                    System.out.println("intro: ");
-                    int num2 = scan.nextInt();
-                    if (max(num1,num2)) {
-                        System.out.println("aaa");
+                    System.out.println("Give me the first number: ");
+                    int firstNumber = scan.nextInt();
+                    System.out.println("Give me the second number: ");
+                    int secondNumber = scan.nextInt();
+
+                    if (MathUtils.isGreater(firstNumber,secondNumber)) {
+                        System.out.println("Correct, "+firstNumber+" is greater than "+secondNumber);
                     }
-                    else System.out.println("bbb");
+                    else System.out.println("Wrong, "+firstNumber+" is not greater than "+secondNumber);
                     break;
+
+
                 case 2:
-                    double a=2;
-                    double b=3;
-                    double c=1;
-                    calcEquacioSegongrau(a, b, c);
+                    double coefficientA;
+                    double coefficientB;
+                    double coefficientC;
+
+                    System.out.println("Give me the coefficient A: ");
+                    coefficientA = scan.nextInt();
+                    System.out.println("Give me the coefficient B: ");
+                    coefficientB = scan.nextInt();
+                    System.out.println("Give me the coefficient C: ");
+                    coefficientC = scan.nextInt();
+                    calcEquacioSegongrau(coefficientA, coefficientB, coefficientC);
                     break;
+
                 case 3:
                     List<OrderLineItem> lineItems = null;
                     Order asd = new Order(lineItems, 5.5);
@@ -47,5 +53,14 @@ public class Main {
                     System.out.println("ATENCIÓ!!! \nHa de ser un valor entre 0 i 5");
             }
         } while (opcio_usuari != 0);
+    }
+
+    public static void menu() {
+        System.out.println("1. Calculate the maximum between two values");
+        System.out.println("2. ");
+        System.out.println("3. ");
+        System.out.println("4. ");
+        System.out.println("5. ");
+        System.out.println("0. Acabar");
     }
 }
