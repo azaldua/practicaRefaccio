@@ -11,3 +11,13 @@
 
 1. isGrater(num1,num2) --> I have changed the 'max' method to 'is greater' because it is more understandable. I have also optimized the way of doing the operation. Otherwise, it would return false in the case that number 1 is equal to or smaller than number two. This way it returns true if it is larger and false if anything else.
 2. The code that was there was understandable because it was purely the mathematical expression. The syntax was made as the same formula, but for a programmer who does not necessarily have to know these things, the variables must be saved descriptively. In addition, we leave comments with the mathematical formula next to them to guide us as best as possible.
+
+## Class --> OrderLineItems, Customer
+<p>We add key methods like getters, setters and tostring</p>
+
+## Class --> Order
+
+<p>Error checking because list cannot be null, and rate cannot be negative.
+In the return we have made a simple change, adding a variable that understands the calculation we are performing and then putting it in the return
+</p>
+

@@ -5,6 +5,16 @@ public class Order {
     private final double taxRate;
 
     public Order(List<OrderLineItem> lineItems, double taxRate) {
+        try {
+            if (lineItems == null) {
+                throw new IllegalArgumentException("lineItems must not be null");
+            }
+            if (taxRate < 0.0) {
+                throw new IllegalArgumentException("taxRate must not be negative");
+            }
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+        }
         this.lineItems = lineItems;
         this.taxRate = taxRate;
     }
@@ -15,6 +25,7 @@ public class Order {
             subtotal += item.getPrice();
         }
         double tax = subtotal * taxRate;
-        return subtotal + tax;
+        double totalPrice = subtotal + tax;
+        return totalPrice;
     }
 }

@@ -11,7 +11,7 @@ public class OrderLineItem {
     public float getPrice() {
         return price * quantity;
     }
-    // Getters for productName, quantity, and price (if needed)
+    // Getters for productName, quantity, and price
     public String getProductName() {
         return productName;
     }
@@ -22,5 +22,28 @@ public class OrderLineItem {
 
     public double getUnitPrice() {
         return price;
+    }
+
+    // Setters for productName, quantity, and price
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+    public void setPrice(float price) {
+        this.price = price;
+    }
+
+    public void setProductName(String productName) {
+        this.productName = productName;
+    }
+
+    // toString() method
+    @Override
+    public String toString() {
+        return "OrderLineItem{" +
+                "productName='" + productName + '\'' +
+                ", quantity=" + quantity +
+                ", price=" + price +
+                '}';
     }
 }
