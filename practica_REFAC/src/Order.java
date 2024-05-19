@@ -9,6 +9,10 @@ public class Order {
         this.lineItems = lineItems;
         this.taxRate = taxRate;
     }
-
-
+    public String toString() {
+        return "Order{" +
+                "lineItems=" + lineItems +
+                ", taxRate=" + taxRate +
+                '}';
+    }
 }
