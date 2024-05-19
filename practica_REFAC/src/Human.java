@@ -18,4 +18,13 @@ public class Human {
                 .append(" ")
                 .append(quarter).toString();
     }
+    public String toString() {
+        return "Human{" +
+                "country='" + country + ''' +
+                ", city='" + city + ''' +
+                ", street='" + street + ''' +
+                ", house='" + house + ''' +
+                ", quarter='" + quarter + ''' +
+                '}';
+    }
 }
