@@ -20,11 +20,11 @@ public class Human {
     }
     public String toString() {
         return "Human{" +
-                "country='" + country + ''' +
-                ", city='" + city + ''' +
-                ", street='" + street + ''' +
-                ", house='" + house + ''' +
-                ", quarter='" + quarter + ''' +
+                "country='" + country + '\'' +
+                ", city='" + city + '\'' +
+                ", street='" + street + '\'' +
+                ", house='" + house + '\'' +
+                ", quarter='" + quarter + '\'' +
                 '}';
     }
 }
