@@ -11,4 +11,10 @@ public class Customer {
     public String getFullName() {
         return firstName + " " + lastName;
     }
+    public String toString() {
+        return "Customer{" +
+                "firstName='" + firstName + ''' +
+                ", lastName='" + lastName + ''' +
+                '}';
+    }
 }
