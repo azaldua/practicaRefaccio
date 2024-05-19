@@ -12,4 +12,11 @@ public class OrderLineItem {
     public double getPrice() {
         return price * quantity;
     }
+    public String toString() {
+        return "OrderLineItem{" +
+                "productName='" + productName + ''' +
+                ", quantity=" + quantity +
+                ", price=" + price +
+                '}';
+    }
 }
