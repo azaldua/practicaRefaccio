@@ -6,6 +6,7 @@
 
 1. We delete the file that comes by default.iml and create the .gitignore with the content *.iml.
 2. We separate the classes into different.java files. This way we can more easily maintain the code.
+3. I have not added refactor, because basically all the code is refactored
 
 ## Class --> MathUtils.java
 
@@ -13,11 +14,14 @@
 2. The code that was there was understandable because it was purely the mathematical expression. The syntax was made as the same formula, but for a programmer who does not necessarily have to know these things, the variables must be saved descriptively. In addition, we leave comments with the mathematical formula next to them to guide us as best as possible.
 
 ## Class --> OrderLineItems, Customer
-<p>We add key methods like getters, setters and tostring</p>
+<p>We add key methods like getters, setters and tostring.</p>
 
 ## Class --> Order
 
 <p>Error checking because list cannot be null, and rate cannot be negative.
-In the return we have made a simple change, adding a variable that understands the calculation we are performing and then putting it in the return
-</p>
+In the return we have made a simple change, adding a variable that understands the calculation we are performing and then putting it in the return.</p>
 
+## Class --> Human
+
+<p>I have added the constructor, I have made the basic methods (get, set, tostring).
+I have also made a method to obtain the complete address.</p>
