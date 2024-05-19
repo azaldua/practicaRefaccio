@@ -17,21 +17,29 @@ public class Main {
     }
     public static void calcEquacioSegongrau(double a, double b, double c) {
         double calculDeRaiz = b * b - 4 * a * c;
-        if (calculDeRaiz > 0) {
-            double x1, x2;
-            //fer una funció per els calculs per poder fer la lectura més entenedora
-            x1 = resultatCalc2nGr(b,a,calculDeRaiz,false);
-            x2 = resultatCalc2nGr(b,a,calculDeRaiz,true);
-            System.out.println("x1 = " + x1 + ", x2 = " + x2);
+        boolean arrelPositiva = calculDeRaiz > 0;
+        boolean arrelZero = calculDeRaiz == 0;
+        if (arrelPositiva) {
+            calculArrelPositiva();
         }
-        else if (calculDeRaiz == 0) {
-            double x;
-            x = resultatCalc2nGr(b,a,calculDeRaiz,false);
-            System.out.println("x = " + x);
+        else if (arrelZero) {
+            calculArrelZero();
         }
         else {
             System.out.println("Equation has no roots");
         }
+    }
+    public static void calculArrelPositiva(){
+        double x1, x2;
+            //fer una funció per els calculs per poder fer la lectura més entenedora
+            x1 = resultatCalc2nGr(b,a,calculDeRaiz,false);
+            x2 = resultatCalc2nGr(b,a,calculDeRaiz,true);
+            System.out.println("x1 = " + x1 + ", x2 = " + x2);
+    }
+    public static void calculArrelZero(){
+        double x;
+            x = resultatCalc2nGr(b,a,calculDeRaiz,false);
+            System.out.println("x = " + x);
     }
     public static double resultatCalc2nGr(double b, double a, double calculDeRaiz, boolean positiu)
     {
@@ -48,15 +56,18 @@ public class Main {
         System.out.println("0. Acabar");
     }
     public static void mostrarMesGran(){
-        System.out.println("intro: ");
-        int num1 = scan.nextInt();
-        System.out.println("intro: ");
-        int num2 = scan.nextInt();
+        demanarNumeros();
         //Aclarar la resposta (no era masa entenedor 'aaa' i 'bbb')
         if (max(num1,num2)) {
              System.out.println("El primer numero és més gran");
         }
         else System.out.println("El segon numero és més gran");
+    }
+    public static void demanarNumeros(){
+        System.out.println("intro: ");
+        int num1 = scan.nextInt();
+        System.out.println("intro: ");
+        int num2 = scan.nextInt();
     }
     public static void calculEquacio(){
         double a=2;
