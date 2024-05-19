@@ -5,3 +5,11 @@
 - Crea una branca del main per a afegir els teus canvis
 - Deixa la teva branca preparada per a que, en cas de fusionar-la amb la master, no afegeixi el teu fitxer .iml
 - No fusionis en cap cas la teva branca amb la master
+# Prova pull request
+- Soy el Xavi haciendo una prueba en el READMI :)
+- Alvarito acepta
+- Otra prueba
+- Pruebav2
+- Estoy dentro ****
+- juanpaco
+- Un dia mas aqui (26/04/2024)

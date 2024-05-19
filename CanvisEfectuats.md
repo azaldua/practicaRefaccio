@@ -1,0 +1,5 @@
+- Menu (Jose) Hecho
+- La funcion del calculo de 2 grado (Xavi) Hecho
+- Extracción de classes (David) Hecho
+- Calxculate total price (Alvaro) Hecho
+- append (David) Hecho
