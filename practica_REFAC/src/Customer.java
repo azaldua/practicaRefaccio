@@ -13,8 +13,8 @@ public class Customer {
     }
     public String toString() {
         return "Customer{" +
-                "firstName='" + firstName + ''' +
-                ", lastName='" + lastName + ''' +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
                 '}';
     }
 }

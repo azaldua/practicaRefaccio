@@ -14,7 +14,7 @@ public class OrderLineItem {
     }
     public String toString() {
         return "OrderLineItem{" +
-                "productName='" + productName + ''' +
+                "productName='" + productName + '\'' +
                 ", quantity=" + quantity +
                 ", price=" + price +
                 '}';

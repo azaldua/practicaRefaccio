@@ -2,6 +2,8 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Main {
+    static Scanner scan = new Scanner(System.in);
+
     public static void main(String[] args) {
         //Fer el menu més entenedor
         selector();
@@ -20,23 +22,23 @@ public class Main {
         boolean arrelPositiva = calculDeRaiz > 0;
         boolean arrelZero = calculDeRaiz == 0;
         if (arrelPositiva) {
-            calculArrelPositiva();
+            calculArrelPositiva(b,a,calculDeRaiz);
         }
         else if (arrelZero) {
-            calculArrelZero();
+            calculArrelZero(b,a,calculDeRaiz);
         }
         else {
             System.out.println("Equation has no roots");
         }
     }
-    public static void calculArrelPositiva(){
+    public static void calculArrelPositiva(double b, double a, double calculDeRaiz){
         double x1, x2;
             //fer una funció per els calculs per poder fer la lectura més entenedora
             x1 = resultatCalc2nGr(b,a,calculDeRaiz,false);
             x2 = resultatCalc2nGr(b,a,calculDeRaiz,true);
             System.out.println("x1 = " + x1 + ", x2 = " + x2);
     }
-    public static void calculArrelZero(){
+    public static void calculArrelZero(double b, double a,double calculDeRaiz ){
         double x;
             x = resultatCalc2nGr(b,a,calculDeRaiz,false);
             System.out.println("x = " + x);
@@ -47,7 +49,7 @@ public class Main {
         else if (!positiu && calculDeRaiz != 0) return (-b - Math.sqrt(calculDeRaiz)) / (2 * a);
         else return (-b / (2 * a));
     }
-    public static mostrarMenu(){
+    public static void mostrarMenu(){
         System.out.println("1. Comparacio de numeros");
         System.out.println("2. Calcul equació segon grau");
         System.out.println("3. Ordenacio items");
@@ -56,18 +58,18 @@ public class Main {
         System.out.println("0. Acabar");
     }
     public static void mostrarMesGran(){
-        demanarNumeros();
+        int num1 = demanarNumeros();
+        int num2 = demanarNumeros();
         //Aclarar la resposta (no era masa entenedor 'aaa' i 'bbb')
         if (max(num1,num2)) {
              System.out.println("El primer numero és més gran");
         }
         else System.out.println("El segon numero és més gran");
     }
-    public static void demanarNumeros(){
+    public static int demanarNumeros(){
         System.out.println("intro: ");
-        int num1 = scan.nextInt();
-        System.out.println("intro: ");
-        int num2 = scan.nextInt();
+        int num = scan.nextInt();
+        return num ;
     }
     public static void calculEquacio(){
         double a=2;
@@ -80,8 +82,7 @@ public class Main {
         Order asd = new Order(lineItems, 5.5);
     }
     public static void selector(){
-        Scanner scan = new Scanner(System.in);
-        String p = "Proves";        
+        String p = "Proves";
         String opcio;
         do {
             mostrarMenu();
@@ -108,6 +109,6 @@ public class Main {
                 default:
                     System.out.println("ATENCIÓ!!! \nHa de ser un valor entre 0 i 5");
             }
-        } while (opcio != 0);
+        } while (opcio.equals("0"));
     }
 }
