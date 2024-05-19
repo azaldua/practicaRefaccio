@@ -1,4 +1,5 @@
 import java.io.File;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -7,7 +8,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         try {
-            //#Refactor
+
             int opcio_usuari;
             do {
                 menu();
@@ -62,10 +63,56 @@ public class Main {
                         break;
 
                     case 3:
-                        List<OrderLineItem> lineItems = null;
-                        Order asd = new Order(lineItems, 5.5);
+                        List<OrderLineItem> lineItems;
+
+                        System.out.println("How many orderlineitems do you want to create?");
+                        if (scan.hasNextInt()) {
+                            throw new IllegalArgumentException("Input must be an integer");
+                        }
+                        int option = scan.nextInt();
+                        if (option < 0) {
+                            throw new IllegalArgumentException("Input must be positive");
+                        }
+
+                        lineItems = new ArrayList<>();
+
+                        while ( lineItems.size() < option) {
+                            System.out.println("Give me the productName: ");
+                            String productName = scan.next();
+
+                            System.out.println("Give me the quantity: ");
+                            if (scan.hasNextInt()) {
+                                throw new IllegalArgumentException("Input must be an integer");
+                            }
+                            int quantity = scan.nextInt();
+
+                            System.out.println("Give me the price: ");
+                            if (scan.hasNextFloat()) {
+                                throw new IllegalArgumentException("Input must be a float");
+                            }
+                            float price = scan.nextFloat();
+
+                            //Add orderlineitem to list
+                            lineItems.add(new OrderLineItem(productName, quantity, price));
+                        }
+
+                        System.out.println("Give me the rate: ");
+                        if (scan.hasNextFloat()) {
+                            throw new IllegalArgumentException("Input must be a float");
+                        }
+                        float tax = scan.nextFloat();
+
+                        Order order = new Order(lineItems, tax);
+
+                        System.out.println("The total price is: "+order.calculateTotalPrice());
                         break;
-                    case 0:
+
+                    case 4:
+                        System.out.println("We are currently undergoing maintenance, thank you for your patience");
+                        break;
+
+                    case 5:
+                        System.out.println("We are currently undergoing maintenance, thank you for your patience");
                         break;
                     default:
                         System.out.println("ATENCIÓ!!! \nHa de ser un valor entre 0 i 5");
@@ -79,9 +126,9 @@ public class Main {
     public static void menu() {
         System.out.println("1. Calculate the maximum between two values");
         System.out.println("2. A second grade equation");
-        System.out.println("3. ");
-        System.out.println("4. ");
-        System.out.println("5. ");
-        System.out.println("0. Acabar");
+        System.out.println("3. Create an order to calculate the total price");
+        System.out.println("4. Comming soon");
+        System.out.println("5. Coming soon");
+        System.out.println("0. Exit");
     }
 }
