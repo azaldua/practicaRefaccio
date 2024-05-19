@@ -47,8 +47,8 @@ public class Main {
         System.out.println("5. Funció en desenvolupament");
         System.out.println("0. Acabar");
     }
-    public static void opcio1(){
-         System.out.println("intro: ");
+    public static void mostrarMesGran(){
+        System.out.println("intro: ");
         int num1 = scan.nextInt();
         System.out.println("intro: ");
         int num2 = scan.nextInt();
@@ -58,13 +58,13 @@ public class Main {
         }
         else System.out.println("El segon numero és més gran");
     }
-    public static void opcio2(){
+    public static void calculEquacio(){
         double a=2;
         double b=3;
         double c=1;
         calcEquacioSegongrau(a, b, c);
     }
-    public static void opcio3(){
+    public static void ordenar(){
         List<OrderLineItem> lineItems = null;
         Order asd = new Order(lineItems, 5.5);
     }
@@ -77,13 +77,13 @@ public class Main {
             opcio = scan.nextLine();
             switch (opcio) {
                 case "1":
-                   opcio1();
+                   mostrarMesGran();
                     break;
                 case "2":
-                    opcio2();
+                    calculEquacio();
                     break;
                 case "3":
-                    opcio3();
+                    ordenar();
                     break;
                     //crear la opció dels números 4 i 5
                 case "4":
